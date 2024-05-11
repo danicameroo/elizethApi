@@ -2,13 +2,15 @@ const inmuebleRoute = require("./routes/inmuebles")
 const userRoute = require('./routes/user')
 const authRoute = require('./routes/auth')
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv")
 const cors = require('cors');
+
+const app = express();
 app.use(cors());
 
 dotenv.config();
+
 mongoose
     .connect(process.env.MONGO_URL)
     .then(()=>console.log("DBconnnection succesfull!"))
